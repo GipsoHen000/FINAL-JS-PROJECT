@@ -1,0 +1,13 @@
+Create a Website of your own imagination. It has to have a minimum of 6 pages: 1 Home Page and 5 Additional Pages.
+
+
+-min 6 pages
+    -1 homepage included
+-try to use everything we learned
+-creativity
+-minor ai use allowed
+-use "this"
+-use Intervals
+-modify styles with JavaScript
+-use while and for loops
+-use Alerts

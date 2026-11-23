@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main-css.css"/>
+    <title>DELTARUNE CHARACTERS</title>
+</head>
+<body>
+    <h1 class="center">CHARACTERS</h1>
+    <h2 class="center">(a little less spoiler free, but not too bad.)</h2>
+    <br>
+
+    <h3 onclick="charInfo('kris', this)">YOU</h3>
+        <p style="display:none;" id="kris">
+            Kris is the only human in Hometown, a town full of monsters (basically any non-humans you can think of). They are non-binary (they/them), and who YOU control during the game after your vessel is discarded. At the end of chapter 1, we see their darker side, free from our control. I won’t spoil too much, but this isn’t a fake-out, and they are indeed a threat. But they’re still much more than that.
+Both because I want to avoid spoiling you, and because the fandom doesn’t know much about this themselves, this section will be very vague. Kris was adopted by the Dreemurr family, very kind goat-like monsters. There’s the mom, Toriel, the dad, Asgore, and the son, Asriel. But they soon became friends with the Holiday family, specifically Noelle and her older sister, ———. After the fateful night ——— disappeared, Kris became more distant and quiet, the bond between them and Noelle started to deteriorate, Asriel went to college, and Toriel and Asgore divorced. When the game starts, the only people in the household are Kris and Toriel.
+        </p>
+    <h3 onclick="charInfo('susie', this)">SUSIE</h3>
+        <p style="display:none;" id="susie">
+            Susie is the school bully of Hometown, heavily implied to have no alive relatives, and definitely an unfit household. When the game starts, she is a mean and brutal bully, above even the teacher. Though, she sees herself as more of an outcast and a weirdo than the villain. In chapter 1, she starts off rejecting the ideas of the prophecy and the whole fantasy situation she and Kris are found in. But, she eventually warms up and becomes the hero she was destined to be. Throughout the game, she becomes more comfortable with you and others, develops a lesbian romance with Noelle, and is arguably the most fleshed-out character in the story, alongside Noelle.
+
+        </p>
+    <h3 onclick="charInfo('ralsei', this)">RALSEI</h3>
+        <p style="display:none;" id="ralsei">
+            Ralsei is the mage, healer, and guide of the 3 heroes. First found in the chapter 1 dark world, they know the story of the prophecy, and want to be kind to (nearly) everyone they meet. In his chapter 1 appearance, and later in chapter 5, he dons a pointed hat that covers them in shadow, before taking it off in chapter 2 for most of the game. Ralsei lacks confidence, agency, and is implied to have been created shortly before meeting Kris and Susie. Though, they later gain more confidence and self-worth in the story with the help of Kris, Susie, and the people they meet along the way. But you’ll soon learn, some things should stay secret…
+
+        </p>
+    <h3 onclick="charInfo('noelle', this)">NOELLE</h3>
+        <p style="display:none;" id="noelle">
+            Noelle is the youngest of the Holiday Family, and Hometown’s goody-two-shoes. Long-time friend of Kris, and later girlfriend of Susie, she is quite the friendly person. However, her family is quite strict, comparatively to extreme christian households. She enjoys horror media, cute things, and Christmas. As well as, of course, her sister ———.
+
+        </p>
+    <h3 onclick="charInfo('other', this)">OTHER HOMETOWN RESIDENTS</h3>
+        <p style="display:none;" id="other">
+            TORIEL AND ASGORE<br><br>
+	Divorced couple, parents of Asriel and Kris Dreemurr. Returning with the same personalities from Undertale, they now hold different, but similar roles in the story. Toriel is still the same motherly figure, but also a teacher now to go along with her whole ‘tutorial’ gimmick. Asgore, instead of a literal king, is now the owner of a flower shop called Flower King, after being fired from chief of police.This will prove important in later chapters.
+	<br><br>CAROL AND RUDY<br><br>
+	The Holiday parents. Carol is a strict and harsh, some may even say cold, mother and person overall. But she did get her job as Hometown mayor for a reason. However, Rudy is incredibly sick, and is bedridden for most of the game. He’s a lot kinder and more forgiving than Carol. So much so that he will stubbornly try to support those he loves no matter what. This will also prove important in later chapters.
+	<br><br>BERDLY<br><br>
+	Berdly is a stereotypical nerd and gamer that, alongside Noelle, ends up in the chapter 2 dark world with the main trio. Not much to say. 
+        </p>
+    <h3 onclick="charInfo('dess', this)">DECEMBER</h3>
+        <p style="display:none;" id="dess">
+            <br>[MISSING]<br>
+        </p>
+
+    <br><br><br>
+    <a class="center" id="darkDoor" href="./main.html"><img src="https://deltarune.wiki/images/Great_Door_overworld.png?cb=9iglwb&h=thumb.php&f=Great_Door_overworld.png"></a>
+    <div id="overlay"></div>
+    <script defer>
+        function charInfo(input, sender){
+            console.log("func work");
+            if(input == "kris"){
+                sender.textContent = "KRIS";
+            }
+            const info = document.getElementById(input);
+            if(info.style.visibility == "visible"){
+                info.style = "display:none;";
+            }else{
+                info.style = "visibility:visible;";    
+            }
+        }
+
+        while(true){
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", runWhenReady);
+            } else {
+                alert("You can click each character's name to see their description!");
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

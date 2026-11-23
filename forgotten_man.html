@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main-css.css"/>
+    <title>forgotten...</title>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <img class="center" id="tree" src="./FMtree.gif" onclick="give()">
+
+    
+    <div id="overlay"></div>
+    <script>
+        //MUSIC --- "MAN.OGG"
+        var sound = new Audio('./FMogg.mp3');
+        function startAudio() {
+            sound.loop = true;
+            sound.play();
+            document.body.removeEventListener('click', startAudio);
+        }
+        document.body.addEventListener('click', startAudio);
+
+
+        var eggs = 0;
+
+        function give(){
+            if(eggs === 0){
+                alert("Well, there is a man here...");
+                alert("He looks as if he has been waiting a long time...");
+            }else if(eggs === 5){
+                //TOO MANY EGGS
+                sound.pause();
+                document.body.style = `
+                background-image: url('https://media.tenor.com/-pMfQcryj3cAAAAj/explosion-boom.gif');
+                background-repeat: repeat;
+                `;
+                sound = new Audio('./explosion.mp3');
+                sound.loop = false;
+                sound.play();
+                sound.addEventListener("ended", () => {
+                    window.location.href = "./main.html";
+                });
+            }
+
+            //EGG
+            if(eggs <5){
+            alert("You recived: EGG");
+            var egg = document.createElement("img");
+            egg.src = "./egg.png"
+            egg.style.float = "right";
+            egg.style.margin = "30px"
+            egg.style.scale = "250%"
+            egg.addEventListener("click",()=>{
+                alert("Not too important. Not too unimportant.");
+            });
+            document.body.appendChild(egg);
+            eggs++;
+            }
+        }
+    </script>
+</body>
+</html>

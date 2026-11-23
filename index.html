@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main-css.css"/>
+    <title>...?</title>
+</head>
+<body onclick="shatter(this)">
+    <script>
+        var clicks = 0;
+        document.body.style = `
+            width:100%;
+            height:1000px;
+        `;
+        function shatter (){
+            if(clicks == 5){
+                console.log("5 clicks!");
+                window.location.href = "main.html";
+                this.removeEventListener("click", handleClick);
+            }
+            clicks++
+
+            var image = document.createElement("img");
+            image.src = "./placeholder shatter.png"
+            image.style = `
+                width:100px;
+                height:80px;
+                position:fixed;
+                left:0px;
+                top:0px;
+                --scale: 1; 
+                transform: scale(var(--scale));
+                display:flex;
+            `;
+            image.style.setProperty('--scale', (clicks **2));
+            const rect = image.getBoundingClientRect();
+            console.log(image.style.width -"px");
+            const x = event.clientX - ((100*(clicks **2)) / (clicks *2));
+            const y = event.clientY - ((80*(clicks **2)) / (clicks *2));
+            console.log(event.clientX);
+            console.log(x);
+            image.style.left = `${x}px`;
+            image.style.top = `${y}px`;
+            document.body.appendChild(image);
+        };
+    </script>
+</body>
+</html>

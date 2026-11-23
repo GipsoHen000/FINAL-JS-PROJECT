@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main-css.css"/>
+    <title>SURVEY_PROGRAM</title>
+</head>
+<body>
+    <h1 class="center">WELCOME TO THE WORLD OF</h1>
+    <img class="center" alt="DELTARUNE" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Deltarune_vector_logo.svg/3840px-Deltarune_vector_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail">
+    <br><br><p>
+        DELTARUNE is the hit Indie-RPG game made by creator Toby Fox with the help of Temmie Chang. It is the successor to arguably more successful Indie-RPG UNDERTALE, which shares similar mechanics, story-telling, gameplay, and even characters!
+        <br>Yes, most characters in the "Light World" sections of the game, aside from the main characters, are lifted from UNDERTALE. Of course, since that game and DELTARUNE have drastically different settings, their roles have changed, but their personalities have certainly not!
+        <br>However, despite sharing so much with it's predecessor, Toby Fox has stated multiple times that DELTARUNE contains its own story, even if it shares connections to UNDERTALE.
+        <br><br>The game releases in chapters, initially released as the ominous "SURVEY_PROGRAM", secretly hiding the first chapter of the game. From then on, every chapter has been released as a bundle or extension of the chapters before it, all under the DELTARUNE brandname.
+        <br>It has Japanese translation, in-depth settings, 3 save slots, and support for the Nintendo Switch, Nintendo Switch 2, PlayStation 4, and PlayStation 5, Mac, as well as it's main platform, PC.
+    </p>
+    <br><br><br><br>
+    <a class="rectangle" href="./story.html">
+        <h2 class="center">STORY</h2>
+        <img id="storyImage" src="https://deltaruneprophecymaker.com/assets/base-panels/initial-2.png">
+    </a>
+    <a class="rectangle" href="./characters.html">
+        <h2 class="center">CHARACTERS</h2>
+        <img id="characterImage" src="https://deltaruneprophecymaker.com/assets/base-panels/heroes-1.png">
+    </a>
+    <a class="rectangle" href="./gameplay.html">
+        <h2 class="center">GAMEPLAY</h2>
+        <img id="gameplayImage" src="https://deltaruneprophecymaker.com/assets/base-panels/rude-buster.png">
+    </a>
+    
+    <br><br><br><br><p class="center">Try to see if you can find the secret page!
+    <br> HINT: See how to access a certain secret room in Chapter 1, and don't give up! (It's RNG based)
+    </p>
+    <script>
+        //STORY SECRET CHANCE
+        var chance = funValue(1,42);
+        var image = document.getElementById("storyImage");
+        if(chance <= 40 && chance >= 21){
+            image.src="https://deltaruneprophecymaker.com/assets/base-panels/initial-1.png";
+        }else if(chance == 41){
+            image.src = "https://deltaruneprophecymaker.com/assets/base-panels/roots.png";
+        }else if(chance == 42){
+            image.src = "https://deltaruneprophecymaker.com/assets/base-panels/end.png";
+        }
+        
+        //CHARACTER SECRET CHANCE
+        chance = funValue(1,33);
+        image = document.getElementById("characterImage");
+        if(chance <= 20 && chance >= 11){
+            image.src = "https://deltaruneprophecymaker.com/assets/base-panels/heroes-3.png";
+        }else if(chance <= 30 && chance >=21){
+            image.src = "https://deltaruneprophecymaker.com/assets/base-panels/heroes-2.png";
+        }else if (chance == 31){
+            image.src ="https://deltaruneprophecymaker.com/assets/base-panels/joke-2.png";
+        }else if (chance == 32){
+            image.src ="https://deltaruneprophecymaker.com/assets/base-panels/boss-3.png";
+        }else if (chance == 33){
+            image.src ="https://deltaruneprophecymaker.com/assets/base-panels/joke-1.png";
+        }
+
+        //GAMEPLAY SECRET CHANCE
+        chance = funValue(1,53);
+        image = document.getElementById("gameplayImage");
+        if(chance == 51){
+            image.src="https://deltaruneprophecymaker.com/assets/base-panels/hammer.png"
+        }else if(chance == 52){
+            image.src="https://deltaruneprophecymaker.com/assets/base-panels/heroes-4.png"
+        }else if(chance == 53){
+            image.src="https://deltaruneprophecymaker.com/assets/base-panels/knight.png"
+        }
+
+        //Egg Secret
+        setTimeout(() => {
+            document.addEventListener("mouseenter", () => {
+                if(funValue(1,1225) == 1){
+                    window.location.href = "./forgotten_man.html";
+                }
+            });
+        }, 5000);
+
+
+        function funValue(min, max){
+            return Math.floor(Math.random()*(max - min +1)+min);
+        }
+    </script>
+</body>
+</html>
